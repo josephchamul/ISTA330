@@ -10,6 +10,8 @@ The letters in A are guaranteed distinct, and all characters in A and B are lett
 
 var howManyCommon = function(A, B) {
     var same=0;
+    A = A.split("");
+    B = B.split("");
     for(var i=0; i<B.length;i++){
         for(var x=0; x<A.length; x++){
             if (B[i] == A[x]){
