@@ -7,6 +7,7 @@ output: 'hello'
 */
 
 var suffleString = function(input, shuffleIndices) {
+    input = input.split("");
     var str = "";
     for(var i=0; i<shuffleIndices.length; i++){
         str += input[shuffleIndices.indexOf(i)];
