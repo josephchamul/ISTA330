@@ -12,5 +12,20 @@ output: 2
 */
 
 var m_element = function(input) {
+    let mNums = input.length/2;
+    var nums = {};
+    for (let i=0; i<input.length; i++){
+        if (input[i] in nums){
+            nums[input[i]] += 1;
+        }else{
+            nums[input[i]] = 1;
+        }
+    }
 
+    for (var key in nums){
+        if (nums[key] > mNums){
+            return key;
+        }
+    }
+    return undefined;
 };
