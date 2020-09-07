@@ -27,5 +27,5 @@ var m_element = function(input) {
             return key;
         }
     }
-    return undefined;
+    return -1;
 };
