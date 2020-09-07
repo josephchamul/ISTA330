@@ -24,7 +24,7 @@ var m_element = function(input) {
 
     for (var key in nums){
         if (nums[key] > mNums){
-            return key;
+            return parseInt(key);
         }
     }
     return -1;
