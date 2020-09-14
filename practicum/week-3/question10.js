@@ -11,5 +11,20 @@ output: true
 */
 
 var isPalindrome = function(s) {
-
+    let word = '';
+    let nS = '';
+    for (let i=0; i<s.length; i++){
+        if (s[i] != ' '){
+            nS += s[i];
+        }
+    }
+    for (let i=s.length-1; i>=0; i--){
+        if (s[i] != ' '){
+            word += s[i];
+        }
+    }
+    if (word.toLowerCase() == nS.toLowerCase()){
+        return true;
+    }
+    return false;
 };
