@@ -19,5 +19,18 @@ Example:
 */
 
 var powerSet = function(input) {
+    var out = [[]];
 
+    for (var i = 1; i < (1 << input.length); i++) {
+        var set = [];
+    for (var j = 0; j < input.length; j++){
+        if (i & (1 << j)){
+            set.push(input[j]);
+        }
+    }
+    out.push(set);
+  }
+
+  return out;
+    
 };
