@@ -20,5 +20,19 @@ Return the number of teams you can form given the conditions.
 */
 
 var howManyTeams = function(input) {
-   
+   let team = [];
+   for (let i=0; i<input.length; i++){
+       for(let j=0; j<input.length; j++){
+           if (i != j){
+               for(let k=0; k<input.length; k++){
+                   if (i != j && i != k && j != k){
+                       if (input[i] < input[j] && input[j] < input[k] && 0 <= i && i<j && j<k && k< input.length){
+                           team.push([input[i], input[j], input[k]]);
+                       }
+                   }
+               }
+           }
+       }
+   }
+   return team.length;
 };
