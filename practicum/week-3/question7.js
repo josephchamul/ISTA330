@@ -16,15 +16,28 @@ output: 7
 
 */
 
-var minPath = function(M) {
-    let sum = 0;
-    for(let i=0; i<M[0].length; i++){
-        if (i == 2){
-            for(let x=1; x<M[0].length; x++){
-                sum += M[x][i];
-            }
-        }
-        sum += M[0][i];
+var minPath = function (M) {
+  let sum = 0;
+  let sum2 = 0;
+  for (let i = 0; i < M[0].length; i++) {
+    if (i == 2) {
+      for (let x = 1; x < M[0].length; x++) {
+        sum += M[x][i];
+      }
     }
-    return sum;
+    sum += M[0][i];
+  }
+  for (let i = 0; i < M[0].length; i++) {
+    if (i == 2) {
+      for (let x = 1; x < M[0].length; x++) {
+        sum2 += M[i][x];
+      }
+    }
+    sum2 += M[0][i];
+  }
+  if (sum2 < sum) {
+    return sum2;
+  }
+  return sum;
 };
+
