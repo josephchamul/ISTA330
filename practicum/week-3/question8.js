@@ -12,6 +12,26 @@ input:  [2,0,2,1,1,0]
 output: [0,0,1,1,2,2]
 */
 
-var sortColors = function(input) {
-
+var sortColors = function (input) {
+  let start = 0;
+  let end = input.length - 1;
+  let i = 0;
+  let x = 0;
+  while (i <= end) {
+    if (input[i] == 0) {
+      x = input[start];
+      input[start] = input[i];
+      input[i] = x;
+      start++;
+      i += 1;
+    } else if (input[i] == 1) {
+      i += 1;
+    } else if (input[i] == 2) {
+      x = input[end];
+      input[end] = input[i];
+      input[i] = x;
+      end--;
+    }
+  }
+  return input;
 };
