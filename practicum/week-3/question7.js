@@ -20,7 +20,7 @@ var minPath = function (M) {
   let sum = 0;
   let sum2 = 0;
   for (let i = 0; i < M[0].length; i++) {
-    if (i == 2) {
+    if (i == M.length - 1) {
       for (let x = 1; x < M[0].length; x++) {
         sum += M[x][i];
       }
@@ -28,7 +28,7 @@ var minPath = function (M) {
     sum += M[0][i];
   }
   for (let i = 0; i < M[0].length; i++) {
-    if (i == 2) {
+    if (i == M.length - 1) {
       for (let x = 1; x < M[0].length; x++) {
         sum2 += M[i][x];
       }
@@ -40,4 +40,3 @@ var minPath = function (M) {
   }
   return sum;
 };
-
