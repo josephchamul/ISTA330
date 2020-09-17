@@ -24,6 +24,16 @@ output:  4
      but A[A[A[A[A[0]]]]] = A[0] = 5 which is a duplicate.
 */
 
-var longestNested = function(A) {
-
+var longestNested = function (A) {
+  let nums = [];
+  let curr = 0;
+  let next = A[curr];
+  while (true) {
+    if (nums.includes(A[curr])) {
+      return nums.length;
+    }
+    nums.push(A[curr]);
+    curr = next;
+    next = A[curr];
+  }
 };
