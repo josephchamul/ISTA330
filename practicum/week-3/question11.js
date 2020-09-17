@@ -33,7 +33,16 @@ Example:
 input: "IV"
 output: 4
 */
-
-var romanToInteger = function(s) {
-
+var romanToInteger = function (s) {
+  var dict = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let len = s.length;
+  let sum = dict[s.charAt(len - 1)];
+  for (let i = len - 2; i >= 0; i--) {
+    if (dict[s.charAt(i)] >= dict[s.charAt(i + 1)]) {
+      sum += dict[s.charAt(i)];
+    } else {
+      sum-= dict[s.charAt(i)];
+    }
+  }
+  return sum;
 };
