@@ -55,12 +55,20 @@
       flower.innerHTML = "<table><tr>";
       for (let i = 0; i < 4; i++) {
         flower.innerHTML +=
-          "<th><img src=images/" + flowers[i].picture + ' alt="flower"></th>"';
-        flower.innerHTML += "<th>" + flowers[i].name + "</th>";
+          "<th><img src=images/" +
+          flowers[i].picture +
+          "<br>" +
+          flowers[i].name +
+          ' alt="flower"></th>"';
       }
       flower.innerHTML += "</tr><tr>";
-      for (let i = 0; i < 4; i++) {
-        flower.innerHTML += "<th>" + flowers[i].name + "</th>";
+      for (let i = 4; i < flowers.length; i++) {
+        flower.innerHTML +=
+          "<th><img src=images/" +
+          flowers[i].picture +
+          "<br>" +
+          flowers[i].name +
+          ' alt="flower"></th>"';
       }
       flower.innerHTML += "</tr></table>";
     </script>
