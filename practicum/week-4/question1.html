@@ -55,16 +55,16 @@
       flower.innerHTML = "<table><tr>";
       for (let i = 0; i < 4; i++) {
         flower.innerHTML +=
-          "<th><img src=images/" +
+          "<td><img src=images/" +
           flowers[i].picture +' alt="flower">'+"<br>" +
-          flowers[i].name +'</th>"';
+          flowers[i].name +'</td>"';
       }
       flower.innerHTML += "</tr><tr>";
       for (let i = 4; i < flowers.length; i++) {
         flower.innerHTML +=
-          "<th><img src=images/" +
+          "<td><img src=images/" +
           flowers[i].picture +' alt="flower">'+"<br>" +
-          flowers[i].name +'</th>"';
+          flowers[i].name +'</td>"';
       }
       flower.innerHTML += "</tr></table>";
     </script>
