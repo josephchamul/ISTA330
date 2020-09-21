@@ -51,8 +51,13 @@
              rose,
              waterlily
        ];
-        var flowers = document.getElementById("flowersDiv");
-        flowers.innerHTML = "<h2>Hello world</h2>";
+        var flower = document.getElementById("flowersDiv");
+      flower.innerHTML = "<table><tr>";
+      for (let i = 0; i < 4; i++) {
+        flower.innerHTML += "<th>" + flowers[i].picture + "</th>";
+        flower.innerHTML += "<th>" + flowers[i].name + "</th>";
+      }
+      flower.innerHTML += "</tr></table>";
     </script>
 </body>
 </html>
