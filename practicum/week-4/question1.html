@@ -51,10 +51,21 @@
              rose,
              waterlily
        ];
-        var flower = document.getElementById("flowersDiv");
+      var flower = document.getElementById("flowersDiv");
       flower.innerHTML = "<table><tr>";
       for (let i = 0; i < 4; i++) {
-        flower.innerHTML += "<th>" + flowers[i].picture + "</th>";
+        flower.innerHTML +=
+          "<th><img src=" +
+          flowers[i].picture +
+          'alt="flower" width="500" height="600"> + "</th>"';
+        flower.innerHTML += "<th>" + flowers[i].name + "</th>";
+      }
+      flower.innerHTML += "</tr><tr>";
+      for (let i = 4; i < flowers.length; i++) {
+        flower.innerHTML +=
+          "<th><img src=" +
+          flowers[i].picture +
+          'alt="flower" width="500" height="600"> + "</th>"';
         flower.innerHTML += "<th>" + flowers[i].name + "</th>";
       }
       flower.innerHTML += "</tr></table>";
