@@ -100,7 +100,7 @@
             rose,
             waterlily
         ];
-       var flower = document.getElementById("flowersDiv");
+      var flower = document.getElementById("flowersDiv");
       let table = document.createElement("table");
       flower.appendChild(table);
       let tr = document.createElement("tr");
@@ -112,7 +112,7 @@
         }
         let td = document.createElement("td");
         let img = document.createElement("img");
-        img.src = "<img src=images/" + flowers[i].picture;
+        img.src = "images/" + flowers[i].picture;
         let node = document.createTextNode(flowers[i].name);
         //td.appendChild(node);
         table.appendChild(td);
