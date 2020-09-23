@@ -50,41 +50,25 @@
              rose,
              waterlily
        ];
-      var flower = document.getElementById("flowersDiv");
-      flower.innerHTML =
-        "<table><tr><td><img src=images/" +
-        flowers[0].picture +
-        "><br>  " +
-        flowers[0].name +
-        "</td><td><img src=images/" +
-        flowers[1].picture +
-        "><br>  " +
-        flowers[1].name +
-        "</td><td><img src=images/" +
-        flowers[2].picture +
-        "><br>  " +
-        flowers[2].name +
-        "</td><td><img src=images/" +
-        flowers[3].picture +
-        "><br>  " +
-        flowers[3].name +
-        "</td></tr><tr><td><img src=images/" +
-        flowers[4].picture +
-        "><br>  " +
-        flowers[4].name +
-        "</td><td><img src=images/" +
-        flowers[5].picture +
-        "><br>  " +
-        flowers[5].name +
-        "</td><td><img src=images/" +
-        flowers[6].picture +
-        "><br>  " +
-        flowers[6].name +
-        "</td><td><img src=images/" +
-        flowers[7].picture +
-        "><br>  " +
-        flowers[7].name +
-        "</td></tr></table>";
+       var flower = document.getElementById("flowersDiv");
+      let table = document.createElement("table");
+      flower.appendChild(table);
+      let tr = document.createElement("tr");
+      table.appendChild(tr);
+      for (let i = 0; i < flowers.length; i++) {
+        if (i == 4) {
+          tr = document.createElement("tr");
+          table.appendChild(tr);
+        }
+        let td = document.createElement("td");
+        let img = document.createElement("img");
+        img.src = "images/" + flowers[i].picture;
+        let node = document.createTextNode(flowers[i].name);
+        //td.appendChild(node);
+        table.appendChild(td);
+        table.appendChild(img);
+        table.appendChild(node);
+      }
     </script>
 </body>
 </html>
