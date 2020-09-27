@@ -1,7 +1,7 @@
 // howManyTeams
 const q1 = [{
-    input: [[2,5,3,4,1]],
-    output: 1
+    input: [[2,5,3,4,1,6]],
+    output: 5
 },
 {
     input: [[2,1,3]],
@@ -9,21 +9,23 @@ const q1 = [{
 }];
 // findDuplicates
 const q2 = [{
-    input: [[19,3,2,10,8,2,3,5]],
-    output: [2,3]
+    input: [[19,3,2,10,8,2,3,5,4,4]],
+    output: [2,3,4],
+    setEquality: true 
 },
 {
     input: [[-17,3,1,5,-9,1,10]],
-    output: [1]
+    output: [1],
+    setEquality: true 
 }];
 // kStepAway
 const q3 = [{
-    input: [[1,0,0,0,1,0,0,1], 2],
-    output: true
+    input: [[1,0,0,0,1,0,1,1], 2],
+    output: false
 },
 {
-    input: [[1,0,0,1,0,1], 2],
-    output: false
+    input: [[1,0,0,1,0,0,0,1], 2],
+    output: true
 }];
 // powerSet
 const q4 = [{
@@ -41,12 +43,12 @@ const q4 = [{
     setEquality: true  
 },
 {
-    input: [[1,2]],
+    input: [[3,2]],
     output: [
         [],
-        [1],
+        [3],
         [2],
-        [1,2]
+        [3,2]
     ],
     setEquality: true  
 }];
@@ -83,7 +85,7 @@ const q7 = [{
         [1,4,5],
         [4,3,2]
       ]],
-    output: 12
+    output: 11
 }];
 // sortColors
 const q8 = [{
@@ -105,17 +107,17 @@ const q9 = [{
 }];
 // isPalindrome
 const q10 = [{
-    input: ['Was it a car or a cat I saw?'],
-    output: true
+    input: ['Was it a cart or a cat I saw?'],
+    output: false
 },
 {
-    input: ['A man, a plane, a canal – Panama'],
-    output: false
+    input: ['A man, a plan, a canal – Panama'],
+    output: true
 }];
 // romanToInteger
 const q11 = [{
-    input: ["IV"],
-    output: 4
+    input: ["VI"],
+    output: 6
 },
 {
     input: ["MCMXCIV"],
@@ -124,12 +126,12 @@ const q11 = [{
 
 // isCrossing
 const q12 = [{
-    input: ["NESSESW"],
-    output: false
+    input: ["NESSESWN"],
+    output: true
 },
 {
-    input: ["NESWW"],
-    output: true
+    input: ["NESENENESSSE"],
+    output: false
 }];
 
 let result = [{
@@ -169,7 +171,7 @@ let result = [{
     cases: q6
 },
 {
-    functionName: 'minPath',
+    functionName: '(Bonus) minPath',
     functionCode: minPath,
     trials: [],
     cases: q7
@@ -207,12 +209,21 @@ let result = [{
 ];
 
 function setsAreEqual(a1, a2) {
+   if(!a2) {
+       return false;
+   } 
    if(a1.length !== a2.length) {
        return false;
    }
    for(let x of a1) {
        let xIsThere = false;
+       if(x.length) {
+           x.sort();
+       }
        for(let y of a2) {
+          if(y.length) {              
+              y.sort();
+          } 
           if(isEqual(x, y)) {
               xIsThere = true;
               break;
